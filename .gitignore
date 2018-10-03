@@ -1,0 +1,18 @@
+### Node ###
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+### VisualStudioCode ###
+.vscode/*
+
+# Distribution
+/dist
+bundle.js
+
+# Yarn temp files
+.yarnclean
+yarn-error.log
