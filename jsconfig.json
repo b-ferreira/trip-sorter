@@ -1,0 +1,34 @@
+{
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es6",
+    "module": "commonjs",
+    "paths": {
+      "components/*": [
+        "./src/components/*"
+      ],
+      "constants/*": [
+        "./src/constants/*"
+      ],
+      "middlewares/*": [
+        "./src/middlewares/*"
+      ],
+      "modules/*": [
+        "./src/modules/*"
+      ],
+      "reducers/*": [
+        "./src/reducers/*"
+      ],
+      "services/*": [
+        "./src/services/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ]
+    }
+  }
+}
