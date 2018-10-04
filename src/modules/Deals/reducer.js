@@ -2,7 +2,7 @@ import { requestInitialState, requestLoadingState, requestSuccessState, requestE
 
 import { DEALS_ACTIONS } from './constants';
 
-const defaultState = requestInitialState;
+const defaultState = requestInitialState([]);
 
 export default (state = defaultState, action) => {
   switch (action.type) {
