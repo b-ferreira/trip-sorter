@@ -17,6 +17,9 @@
       "middlewares/*": [
         "./src/middlewares/*"
       ],
+      "mocks/*": [
+        "./mocs/*"
+      ],
       "modules/*": [
         "./src/modules/*"
       ],

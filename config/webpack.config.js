@@ -81,6 +81,7 @@ module.exports = {
       components: __path.join(paths.appSrc, "/components"),
       constants: __path.join(paths.appSrc, "/constants"),
       middlewares: __path.join(paths.appSrc, "/middlewares"),
+      mocks: __path.join(paths.rootFolder, "/__mocks__"),
       modules: __path.join(paths.appSrc, "/modules"),
       reducers: __path.join(paths.appSrc, "/reducers"),
       services: __path.join(paths.appSrc, "/services"),
