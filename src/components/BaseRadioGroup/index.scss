@@ -1,0 +1,9 @@
+
+.base-radio-group {
+  display: flex;
+  flex-direction: column;
+
+  &--horizontal {
+    flex-direction: row;
+  }
+}
