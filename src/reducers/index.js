@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux';
 
 import { dealsReducer } from 'modules/Deals';
+import { optimizerReducer } from 'modules/Optimizer';
 
 export default combineReducers({
-  deals: dealsReducer
+  deals: dealsReducer,
+  optimizer: optimizerReducer,
 });
