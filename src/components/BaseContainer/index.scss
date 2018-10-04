@@ -1,0 +1,8 @@
+@import 'style/abstracts';
+
+.base-container {
+  padding: $grid-gutter-width-base 0;
+  background-color: map-get($color-palette, 'white');
+  border-radius: 8px;
+  box-shadow: 0px 10px 16px 0px rgba(0, 0, 0, 0.1);
+}
