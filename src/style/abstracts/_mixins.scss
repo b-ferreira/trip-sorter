@@ -1,0 +1,26 @@
+/////
+/// Mixins
+/// @group general
+////
+
+@mixin buttonColor($color) {
+  border: 1px solid $color;
+  color: $color;
+  &:hover {
+    background-color: lighten($color, 10);
+    color: map-get($color-palette, 'white');
+  }
+}
+
+%defaultButton {
+  cursor: pointer;
+  padding: $grid-gutter-width-base / 4 $grid-gutter-width-base * 1.5;
+  text-align: center;
+  border-radius: 8px;
+  background-color: transparent;
+  &:focus {
+    outline: 0;
+  }
+}
+
+
