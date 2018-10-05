@@ -12,6 +12,7 @@ const block = bem('base-select');
 class BaseSelect extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    isDisabled: PropTypes.bool,
     label: PropTypes.string.isRequired,
     onChange: PropTypes.func,
     options: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -20,6 +21,7 @@ class BaseSelect extends PureComponent {
 
   static defaultProps = {
     className: null,
+    isDisabled: false,
     onChange: identity,
     selectedValue: null,
   };
@@ -30,7 +32,7 @@ class BaseSelect extends PureComponent {
   };
 
   render() {
-    const { className, label, options, selectedValue } = this.props;
+    const { className, isDisabled, label, options, selectedValue } = this.props;
     return (
       <div className={classNames(block.toString(), className)}>
         <label className={block.element('label')}>
@@ -38,13 +40,14 @@ class BaseSelect extends PureComponent {
           <select
             className={block.element('select').modifier(selectedValue === '' && 'empty')}
             value={selectedValue}
+            disabled={ isDisabled ? 'disabled' : null }
             onChange={this.handleChange}
           >
             <option
               className={block.element('option').modifier('empty')}
               value=""
             >
-              Select an opton
+              Select an option
             </option>
             {!isEmpty(options) &&
               options.map(({ value, label }) => (

@@ -31,5 +31,10 @@
     &--empty {
       color: map-get($color-palette, 'text-light');
     }
+
+    &:disabled {
+      color: map-get($color-palette, 'text-light');
+      border-bottom: 1px solid map-get($color-palette, 'text-light');
+    }
   }
 }
