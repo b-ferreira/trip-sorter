@@ -3,12 +3,31 @@
 /// @group general
 ////
 
-@mixin buttonColor($color) {
+@mixin buttonColor($color, $textColor: map-get($color-palette, 'white')) {
+  color: $textColor;
+  border: 1px solid $color;
+  background-color: $color;
+  &:hover {
+    border-color: lighten($color, 5);
+    background-color: lighten($color, 5);
+  }
+  &:active {
+    border-color: lighten($color, 8);
+    background-color: lighten($color, 8);
+  }
+}
+
+@mixin outlineButton($color) {
   border: 1px solid $color;
   color: $color;
   &:hover {
+    border-color: lighten($color, 10);
     background-color: lighten($color, 10);
     color: map-get($color-palette, 'white');
+  }
+  &:active {
+    border-color: lighten($color, 20);
+    background-color: lighten($color, 20);
   }
 }
 
