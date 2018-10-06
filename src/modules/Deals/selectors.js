@@ -12,5 +12,5 @@ const allDepartureCities = map(prop('departure'));
 const allArrivalCities = map(prop('arrival'));
 export const availableCitiesSelector = createSelector(
   dealsBaseState,
-  ({ data }) => data ? uniq(concat(allDepartureCities(data), allArrivalCities(data))) : []
+  ({ data }) => data ? uniq(concat(allDepartureCities(data), allArrivalCities(data))).sort() : []
 );
