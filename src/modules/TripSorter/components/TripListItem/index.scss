@@ -1,0 +1,106 @@
+@import 'style/abstracts';
+
+.trip-list-item {
+  min-width: 320px;
+  padding: $grid-gutter-width-base / 2;
+  border-radius: $grid-gutter-width-base / 2;
+  background-color: map-get($color-palette, 'white');
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+
+  &:not(:last-of-type) {
+    margin-bottom: $grid-gutter-width-base / 2;
+  }
+
+  &,
+  &__column,
+  &__row {
+    display: flex;
+  }
+
+  &__column {
+    flex-direction: column;
+
+    &--trip {
+      flex: 1;
+      margin-right: $grid-gutter-width-base / 2;
+    }
+
+    &--cost {
+      min-width: 100px;
+      background-color: map-get($color-palette, 'gray-light');
+      margin: -($grid-gutter-width-base / 2);
+      padding: $grid-gutter-width-base / 2;
+      border-radius: 0 $grid-gutter-width-base / 2 $grid-gutter-width-base / 2 0;
+      border-left: 2px solid map-get($color-palette, 'purple');
+    }
+  }
+
+  &__row {
+    flex-direction: row;
+
+    &--cities {
+      align-items: center;
+      margin: 0 $grid-gutter-width-base / 2 $grid-gutter-width-base / 2 0;
+      padding-bottom: $grid-gutter-width-base / 2;
+      border-bottom: 1px solid map-get($color-palette, 'gray-light');
+    }
+
+    &--final-cost {
+      flex: 1;
+      color: map-get($color-palette, 'text-base');
+      font-size: 24px;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--with-discount {
+      font-size: 16px;
+      justify-content: flex-end;
+      margin-bottom: $grid-gutter-width-base / 4;
+    }
+
+    &--discount-info {
+      justify-content: flex-end;
+    }
+
+    &--details {
+      color: map-get($color-palette, 'text-base');
+      font-size: .75em;
+    }
+  }
+
+  &__label {
+    &:not(:last-of-type) {
+      margin-right: $grid-gutter-width-base / 2;
+    }
+
+    &--original-cost {
+      font-size: 12px;
+      color: map-get($color-palette, 'red');
+      text-decoration: line-through;
+    }
+
+    &--discount {
+      font-size: 12px;
+      color: map-get($color-palette, 'green');
+    }
+
+    &--reference {
+      font-style: italic;
+    }
+
+    &--transport {
+      min-width: 18px;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
+  }
+
+  &__arrow {
+    width: 16px;
+    height: 16px;
+    margin-right: $grid-gutter-width-base / 2;
+    fill: map-get($color-palette, 'green');
+  }
+}

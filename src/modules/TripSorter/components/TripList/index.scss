@@ -1,0 +1,10 @@
+@import 'style/abstracts';
+
+.trip-list {
+  &__reset-btn {
+    @include buttonColor(map-get($color-palette, 'purple'));
+    @extend %defaultButton;
+    width: 100%;
+    font-size: 16px;
+  }
+}

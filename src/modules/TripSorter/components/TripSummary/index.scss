@@ -1,0 +1,17 @@
+@import 'style/abstracts';
+
+.trip-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $grid-gutter-width-base / 2;
+  padding: $grid-gutter-width-base / 2 $grid-gutter-width-base;
+  border-radius: $grid-gutter-width-base / 2;
+  background-color: map-get($color-palette, 'green');
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.1);
+
+  &__label {
+    font-size: 24px;
+    color: map-get($color-palette, 'gray-light');
+  }
+}
