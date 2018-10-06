@@ -50,7 +50,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g)$/i,
         use: [
           "file-loader",
           {
@@ -58,6 +58,20 @@ module.exports = {
             options: {
               bypassOnDebug: true, // webpack@1.x
               disable: true // webpack@2.x and newer
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "babel-loader"
+          },
+          {
+            loader: "react-svg-loader",
+            options: {
+              jsx: true // true outputs JSX tags
             }
           }
         ]
@@ -83,6 +97,7 @@ module.exports = {
       middlewares: __path.join(paths.appSrc, "/middlewares"),
       mocks: __path.join(paths.rootFolder, "/__mocks__"),
       modules: __path.join(paths.appSrc, "/modules"),
+      images: __path.join(paths.rootFolder, "/images"),
       reducers: __path.join(paths.appSrc, "/reducers"),
       services: __path.join(paths.appSrc, "/services"),
       style: __path.join(paths.appSrc, "/style"),
