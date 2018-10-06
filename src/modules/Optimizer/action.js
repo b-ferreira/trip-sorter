@@ -48,7 +48,7 @@ const optimizationReset = () => ({
 export const optimizeTrip = (dataset, from, to, sortStrategy = AVAILABLE_SORTING_OPTIONS.cheapst) => dispatch => {
   dispatch(optimizationRequest());
 
-  findOptimimalPath(dataset, from, to, sortStrategy)
+  return findOptimimalPath(dataset, from, to, sortStrategy)
     .then(paths => dispatch(optimizationSuccess(paths)))
     .catch(error => dispatch(optimizationError(error)));
 };
