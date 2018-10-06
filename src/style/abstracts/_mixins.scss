@@ -15,6 +15,10 @@
     border-color: lighten($color, 8);
     background-color: lighten($color, 8);
   }
+  &:disabled {
+    border-color: map-get($color-palette, 'gray');
+    background-color: map-get($color-palette, 'gray');
+  }
 }
 
 @mixin outlineButton($color) {
