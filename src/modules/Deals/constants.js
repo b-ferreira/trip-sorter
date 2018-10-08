@@ -4,5 +4,5 @@
 export const DEALS_ACTIONS = {
   REQUEST: 'deals-request',
   SUCCESS: 'deals-success',
-  ERROR: 'deals-success',
+  ERROR: 'deals-error',
 };
