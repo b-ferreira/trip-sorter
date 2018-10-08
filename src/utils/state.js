@@ -1,13 +1,24 @@
 /**
+ * Meta sufixes mapping.
+ * Every state must have these attributes.
+ */
+const STATE_META_SUFFIXES = {
+  DATA: 'data',
+  IS_LOADING: 'isLoading',
+  LOADED: 'loaded',
+  ERROR: 'error'
+};
+
+/**
  * Helper function which returns default intial state for reducers.
  *
  * @param {*} initialData Any required initial data for reducer state
  */
 export const requestInitialState = (initialData = {}) => ({
-  data: initialData,
-  isLoading: false,
-  isLoaded: false,
-  error: null
+  [STATE_META_SUFFIXES.DATA]: initialData,
+  [STATE_META_SUFFIXES.IS_LOADING]: false,
+  [STATE_META_SUFFIXES.LOADED]: false,
+  [STATE_META_SUFFIXES.ERROR]: null
 });
 
 /**
@@ -17,8 +28,8 @@ export const requestInitialState = (initialData = {}) => ({
  */
 export const requestLoadingState = state => ({
   ...state,
-  isLoading: true,
-  isLoaded: false,
+  [STATE_META_SUFFIXES.IS_LOADING]: true,
+  [STATE_META_SUFFIXES.LOADED]: false,
 });
 
 /**
@@ -30,10 +41,10 @@ export const requestLoadingState = state => ({
  */
 export const requestSuccessState = (state, data) => ({
   ...state,
-  isLoading: false,
-  isLoaded: true,
-  data,
-  error: null,
+  [STATE_META_SUFFIXES.IS_LOADING]: false,
+  [STATE_META_SUFFIXES.LOADED]: true,
+  [STATE_META_SUFFIXES.DATA]: data,
+  [STATE_META_SUFFIXES.ERROR]: null,
 });
 
 /**
@@ -45,7 +56,39 @@ export const requestSuccessState = (state, data) => ({
  */
 export const requestErrorState = (state, error) => ({
   ...state,
-  isLoading: false,
-  isLoaded: false,
-  error
+  [STATE_META_SUFFIXES.IS_LOADING]: false,
+  [STATE_META_SUFFIXES.LOADED]: false,
+  [STATE_META_SUFFIXES.ERROR]: error,
 });
+
+/**
+ * Helper function to retrieve the data from state.
+ *
+ * @param {Function} inputSelector Selector function.
+ */
+export const getDataSelector = inputSelector => state =>
+  inputSelector(state)[STATE_META_SUFFIXES.DATA];
+
+/**
+ * Helper function to determine if some piece of the state is loading.
+ *
+ * @param {Function} inputSelector Selector function.
+ */
+export const isLoadingSelector = inputSelector => state =>
+  inputSelector(state)[STATE_META_SUFFIXES.IS_LOADING];
+
+/**
+ * Helper function to determine if some piece of the state has loaded.
+ *
+ * @param {Function} inputSelector Selector function.
+ */
+export const hasLoadedSelector = inputSelector => state =>
+  inputSelector(state)[STATE_META_SUFFIXES.LOADED];
+
+/**
+ * Helper function to determine i some piece of the state has error.
+ *
+ * @param {Function} inputSelector Selector function.
+ */
+export const hasErrorSelector = inputSelector => state =>
+  !!inputSelector(state)[STATE_META_SUFFIXES.ERROR];
