@@ -1,8 +1,8 @@
-import { createSelector } from 'reselect';
+import { getDataSelector, isLoadingSelector, hasLoadedSelector, hasErrorSelector } from 'utils/state';
 
 const optimizerBaseState = state => state.optimizer;
 
-export const optimizedTripSelector = createSelector(
-  optimizerBaseState,
-  ({ data }) => data || []
-);
+export const optimizedTripSelector = getDataSelector(optimizerBaseState);
+export const isOptimizedTripLoadingSelector = isLoadingSelector(optimizerBaseState);
+export const hasOptimizedTripLoadedSelector = hasLoadedSelector(optimizerBaseState);
+export const hasOptimizedTripErrorSelector = hasErrorSelector(optimizerBaseState);

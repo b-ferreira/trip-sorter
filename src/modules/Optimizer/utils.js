@@ -1,5 +1,6 @@
 import Diqueue from 'diqueue';
 import { groupBy, isEmpty, isNil, pipe, prop, sort } from 'ramda';
+import { AVAILABLE_SORTING_STRATEGIES } from 'modules/Optimizer/constants';
 
 const groupByDeparture = groupBy(prop('departure'));
 const groupByArrival = groupBy(prop('arrival'));
@@ -98,7 +99,7 @@ const traverseShortestPath = ({ previousVertices }, references, destination) => 
   return shortestPath.reverse();
 };
 
-export const findOptimimalPath = (dataset, from, to, sortStrategy) => {
+export const findOptimimalPath = (dataset, from, to, sortStrategy = AVAILABLE_SORTING_STRATEGIES.cheapest) => {
   return new Promise((resolve, reject) => {
     try {
       const graph = initializeGraph(dataset, sortStrategy);
