@@ -1,0 +1,50 @@
+[
+  {
+    "transport": "bus",
+    "departure": "Amsterdam",
+    "arrival": "Warsaw",
+    "duration": {
+      "h": "05",
+      "m": "15"
+    },
+    "cost": 40,
+    "discount": 25,
+    "reference": "BAW0515"
+  },
+  {
+    "transport": "bus",
+    "departure": "Warsaw",
+    "arrival": "Stockholm",
+    "duration": {
+      "h": "05",
+      "m": "15"
+    },
+    "cost": 40,
+    "discount": 50,
+    "reference": "BWS0515"
+  },
+  {
+    "transport": "bus",
+    "departure": "Stockholm",
+    "arrival": "Moscow",
+    "duration": {
+      "h": "05",
+      "m": "30"
+    },
+    "cost": 40,
+    "discount": 25,
+    "reference": "BSM0530"
+  },
+  {
+    "transport": "bus",
+    "departure": "Moscow",
+    "arrival": "Kiev",
+    "duration": {
+      "h": "07",
+      "m": "00"
+    },
+    "cost": 40,
+    "discount": 50,
+    "reference": "BMK0700"
+  }
+]
