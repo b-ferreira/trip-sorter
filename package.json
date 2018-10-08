@@ -1,8 +1,7 @@
 {
-  "name": "property-finder-case",
+  "name": "trip-sorter",
   "version": "1.0.0",
   "description": "A React application used to represent the cheapest or faster continuous travel path between a departure and an arrival location.",
-  "main": "index.js",
   "author": "Bruno Ferreira <bferreira.assis@gmail.com>",
   "license": "MIT",
   "scripts": {
