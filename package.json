@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --config config/webpack.config.development.js --open",
-    "build": "webpack --mode production --config config/webpack.config.production.js"
+    "build": "webpack --mode production --config config/webpack.config.production.js",
+    "test:unit": "jest"
   },
   "dependencies": {
     "@babel/core": "^7.1.0",
@@ -17,11 +18,14 @@
     "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "diqueue": "^1.1.4",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.6.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-html": "^4.0.6",
@@ -30,6 +34,9 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "image-webpack-loader": "^4.3.1",
+    "jest": "^23.6.0",
+    "jest-environment-enzyme": "^6.1.2",
+    "jest-enzyme": "^6.1.2",
     "mini-css-extract-plugin": "^0.4.3",
     "node-sass": "^4.9.3",
     "numeral": "^2.0.6",
