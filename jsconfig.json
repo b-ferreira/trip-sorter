@@ -14,11 +14,14 @@
       "constants/*": [
         "./src/constants/*"
       ],
+      "fixtures/*": [
+        "./__fixtures__/*"
+      ],
       "middlewares/*": [
         "./src/middlewares/*"
       ],
       "mocks/*": [
-        "./mocs/*"
+        "./__mocks__/*"
       ],
       "modules/*": [
         "./src/modules/*"

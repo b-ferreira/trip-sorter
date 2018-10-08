@@ -94,6 +94,7 @@ module.exports = {
     alias: {
       components: __path.join(paths.appSrc, "/components"),
       constants: __path.join(paths.appSrc, "/constants"),
+      fixtures: __path.join(paths.rootFolder, "/__fixtures__"),
       middlewares: __path.join(paths.appSrc, "/middlewares"),
       mocks: __path.join(paths.rootFolder, "/__mocks__"),
       modules: __path.join(paths.appSrc, "/modules"),
